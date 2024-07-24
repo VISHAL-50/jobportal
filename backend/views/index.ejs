@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reset password</title>
+    <script>
+        var status = '<%- JSON.stringify(status) %>';
+        
+            var parsedStatus = JSON.parse(status);
+            if (parsedStatus=="verified") {
+                if (confirm("Do you want to continue?")) {
+                    window.location.href = "http://localhost:3000/login";
+                }
+            }
+      
+    </script>
+    
+</head>
+<body>
+    <style>
+    
+    .form-container {
+        width: 300px;
+        margin: auto;
+      }
+      
+      form {
+        background: #f2f2f2;
+        padding: 20px;
+        border-radius: 5px;
+      }
+      
+      h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+      
+      p {
+        margin-bottom: 10px;
+      }
+      
+      span {
+        color: red;
+      }
+      
+      input[type="password"] {
+        width: 93%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      
+      input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+      </style>
+
+
+
+    <section class="form-container">
+        <form action="" method="post" >
+          <h3><%= email %></h3>
+          <p>
+         password <span>*</span>
+          </p>
+          <input
+            type="password"
+        name="password"
+
+            placeholder="password"
+            maxLength={100}
+            required=""
+            class="box"
+            id=""
+          />
+          <p>
+            confirm password <span>*</span>
+          </p>
+          <input
+            type="password"
+        name="confirm-password"
+
+            placeholder="re-enter your password"
+            required=""
+            maxLength={50}
+            class="box"
+            id=""
+          />
+          <input
+            type="submit"
+            defaultValue="submit"
+            name="submit"
+            class="btn"
+          />
+    
+        </form>
+      </section>
+</body>
+</html>
