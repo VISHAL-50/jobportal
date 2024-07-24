@@ -1,0 +1,239 @@
+section {
+  padding: 2rem;
+
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .flex-btn {
+    flex-flow: column;
+    gap: 0;
+  }
+
+  .about .row .image img {
+    /* width: 100%; */
+    height: auto;
+  }
+
+  .playlist .row .col .thumb {
+    height: 20rem;
+  }
+
+  .contact .row .image img {
+    height: auto;
+  }
+}
+
+.about .row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.about .row .image {
+  flex: 1 1 40rem;
+}
+
+.about .row .image img {
+  width: 100%;
+  height: 50rem;
+}
+
+.about .row .content {
+  flex: 1 1 40rem;
+}
+
+.about .row .content h3 {
+  font-size: 2.5rem;
+  color: var(--black);
+}
+
+.about .row .content p {
+  line-height: 2;
+  font-size: 1.7rem;
+  color: var(--light-color);
+  padding: 1rem 0;
+}
+
+.about .box-container {
+  margin-top: 3rem;
+  /* background-color: red; */
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.about .box-container .box {
+  flex: 1 1 20rem;
+  display: flex;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about .box-container .box i {
+  font-size: 3rem;
+  color: var(--black);
+}
+
+.about .box-container .box h3 {
+  color: var(--main-color);
+  font-size: 2.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.about .box-container .box span {
+  font-size: 1.6rem;
+  color: var(--light-color);
+}
+
+/* review section start here  */
+
+.reviews .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.reviews .box-container .box {
+  border-radius: 0.5rem;
+  padding: 2rem;
+  background-color: var(--white);
+  padding-top: 1.5rem;
+}
+.reviews .box-container .box:hover {
+  /* border: var(--border); */
+  background-color: var(--hwhite);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.reviews .box-container .box p {
+  line-height: 2;
+  font-size: 1.7rem;
+  color: var(--light-color);
+}
+
+.reviews .box-container .box .user {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.reviews .box-container .box .user img {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.reviews .box-container .box .user h3 {
+  font-size: 2rem;
+  color: var(--black);
+  margin-bottom: 0.2rem;
+}
+
+.reviews .box-container .box .user .stars i {
+  color: var(--main-color);
+  font-size: 1.5rem;
+}
+/* review section end here  */
+
+/* jobs applied section start here  */
+
+.jobs .box-container {
+  display: inline;
+}
+.jobs .box-container .box {
+  border-radius: 0.5rem;
+  padding: 2rem;
+  background-color: var(--white);
+  padding-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+.jobs .box-container .box p {
+  line-height: 2;
+  font-size: 1.7rem;
+  color: var(--light-color);
+}
+
+.jobs .box-container .box h3,
+h4 {
+  font-size: 2.5rem;
+  color: var(--black);
+  margin-bottom: 0.2rem;
+  font-weight: 300;
+  /* line-height: 2; */
+}
+.jobs .box-container .box h4 {
+  color: var(--main-color);
+  text-align: center;
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+.jobs .box-container .box h5 {
+  font-size: 1rem;
+  color: var(--black);
+  margin-bottom: 0.2rem;
+  font-weight: 800;
+}
+.jobs .box-container .box a {
+  width: 20rem;
+}
+.jobs .box-container .box span {
+  font-size: 2.5rem;
+  color: var(--main-color);
+  display: flex;
+  padding: 2rem;
+  gap: 0.5rem;
+  overflow: hidden;
+}
+
+.applyjobs .box-container .box {
+  min-height: 80vh;
+}
+
+/* job section ends here  */
+
+/* swiper start here  */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider-image {
+  background-color: rgba(255, 0, 0, 0);
+  height: 54vh;
+  object-fit: cover;
+}

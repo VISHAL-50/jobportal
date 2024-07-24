@@ -1,0 +1,702 @@
+:root {
+  --main-color: #f06e1e;
+  /* --main-color: #ff9933; */
+  --red: #e7863c;
+  --orange: #f37f12;
+  --white: #fff;
+  --hwhite: #fff5e0ea;
+  --black: #2c3e50;
+  --light-color: #4a4747;
+  --light-bg: #eee;
+  --border: 0.1rem solid rgba(0, 0, 0, 0.2);
+}
+.Toastify__toast-body > div:last-child {
+  font-size: large;
+  word-break: break-word;
+  flex: 1 1;
+}
+* {
+  font-family: "Bitter", serif;
+  font-family: "Questrial", sans-serif;
+  font-family: "Scope One", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+*::selection {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+*::-webkit-scrollbar {
+  height: 0.5rem;
+  width: 1rem;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+}
+
+html {
+  font-size: 61.5%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--light-bg);
+  padding-left: 30rem;
+  transition: 0.2s linear;
+  /* background-color: red; */
+}
+
+body.dark {
+  --white: #222;
+  --hwhite: #141414;
+  --black: #fff;
+  --light-color: #aaa;
+  --light-bg: #333;
+  --border: 0.1rem solid rgba(255, 255, 255, 0.2);
+}
+
+body.active {
+  padding-left: 0;
+}
+
+section {
+  padding: 2rem;
+
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header .flex .search-form {
+  width: 50rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  background-color: var(--light-bg);
+}
+
+.header .flex .search-form input {
+  width: 100%;
+  background: none;
+  font-size: 1.8rem;
+  color: var(--black);
+}
+
+.header .flex .search-form a {
+  font-size: 2rem;
+  color: var(--black);
+  cursor: pointer;
+  background: none;
+}
+
+.header .flex .search-form a:hover {
+  color: var(--main-color);
+}
+
+.flex-btn {
+  display: flex;
+  justify-content: space-between;
+}
+.option-btn,
+.inline-btn {
+  background-color: var(--orange);
+}
+.btn,
+.option-btn,
+.inline-btn {
+  border-radius: 0.5rem;
+  padding: 1rem 3rem;
+  font-size: 1.8rem;
+  color: #fff;
+  margin-top: 1rem;
+  text-transform: capitalize;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s;
+}
+.inline-btn {
+  display: inline-block;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+}
+
+.btn {
+  background-color: var(--main-color);
+}
+.btn i {
+  margin-left: 1rem;
+}
+
+.btn:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.flex-btn {
+  display: flex;
+  gap: 1rem;
+}
+
+.heading {
+  padding-bottom: 1.8rem;
+  border-bottom: var(--border);
+  font-size: 3rem;
+  color: var(--black);
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.heading span {
+  color: var(--main-color);
+}
+.header {
+  background-color: var(--white);
+  border-bottom: var(--border);
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.header .flex {
+  padding: 1.5rem 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* 
+.header .flex .logo {
+    font-size: 2.5rem;
+    color: var(--black);
+    font-weight: bolder;
+} */
+.header .flex img {
+  height: 4.5rem;
+}
+
+.header .flex .icons div {
+  font-size: 2rem;
+  color: var(--black);
+  border-radius: 0.5rem;
+  height: 4.5rem;
+  cursor: pointer;
+  width: 4.5rem;
+  line-height: 4.4rem;
+  background-color: var(--light-bg);
+  text-align: center;
+  margin-left: 0.5rem;
+}
+
+.header .flex .icons div:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+/* profile section start */
+#search-btn {
+  display: none;
+}
+
+.header .flex .profile {
+  position: absolute;
+  top: 120%;
+  right: 2rem;
+  background-color: var(--white);
+  border-radius: 0.55rem;
+  padding: 2rem;
+  text-align: center;
+  width: 30rem;
+
+  transform: scale(0);
+  transform-origin: top right;
+  transition: 0.2s linear;
+}
+
+.header .flex .profile.active {
+  transform: scale(1);
+}
+
+.header .flex .profile img {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 5rem;
+}
+
+.header .flex .profile h3 {
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.header .flex .profile span {
+  color: var(--light-color);
+  font-size: 1.65rem;
+}
+/* profile section end   */
+
+.side-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30rem;
+  height: 100vh;
+  background-color: var(--white);
+  border-right: var(--border);
+  transition: 0.2s linear;
+  z-index: 1200;
+}
+
+.side-bar .close-side-bar {
+  text-align: right;
+  padding: 2rem;
+  padding-bottom: 0;
+  display: none;
+}
+
+.side-bar .close-side-bar i {
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.4rem;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  background-color: var(--red);
+  text-align: center;
+  border-radius: 0.5rem;
+}
+
+.side-bar .close-side-bar i:hover {
+  background-color: var(--black);
+}
+
+.side-bar .profile {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.side-bar .profile img {
+  height: 12rem;
+  width: 12rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 5rem;
+  border: 0.6rem solid var(--main-color);
+}
+
+.side-bar .profile h3 {
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.side-bar .profile span {
+  color: var(--light-bg);
+  font-size: 1.65rem;
+}
+
+.side-bar .navbar a {
+  display: block;
+  padding: 2rem;
+  margin: 0.5rem 0;
+  font-size: 1.8rem;
+}
+.form-container form a {
+  display: block;
+  padding: 2rem;
+  margin: 0.5rem 0;
+  font-size: 1.8rem;
+  text-decoration: underline;
+}
+.side-bar .navbar a i {
+  color: var(--main-color);
+  margin-right: 1.5rem;
+  transition: 0.2s linear;
+}
+
+.side-bar .navbar a span {
+  color: var(--light-color);
+}
+
+.side-bar .navbar a:hover {
+  background-color: var(--light-bg);
+}
+
+.side-bar .navbar a:hover i {
+  margin-right: 2.5rem;
+}
+
+.side-bar.active {
+  left: -31rem;
+}
+.home {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: column;
+  padding: 0 3rem;
+}
+
+footer {
+  background-color: var(--white);
+  color: var(--black);
+  padding: 2rem 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo img {
+  max-width: 50px;
+}
+
+.footer-social a {
+  color: var(--black);
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  font-size: 1.3rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Add social media icon styles */
+.fa-github,
+.fa-twitter,
+.fa-instagram {
+  font-size: 1.5rem;
+}
+
+/* media query 
+ */
+@media (max-width: 1200px) {
+  body {
+    padding-left: 0;
+  }
+
+  .side-bar .close-side-bar {
+    display: block;
+  }
+
+  .side-bar {
+    transition: 0.2s linear;
+    left: -30rem;
+  }
+
+  .side-bar.active {
+    left: 0;
+    box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.7);
+  }
+  .home {
+    padding: 1rem 4rem;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+
+  .heading {
+    font-size: 3rem;
+  }
+}
+
+/* login page start  */
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 14rem);
+}
+.form-container form {
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  width: 50rem;
+}
+
+.form-container form h3 {
+  text-align: center;
+  color: var(--black);
+  font-size: 2.56rem;
+  margin-bottom: 1rem;
+}
+
+.form-container form p {
+  padding-top: 1rem;
+  font-size: 1.7rem;
+  color: var(--light-color);
+}
+
+.form-container form p span {
+  color: var(--red);
+}
+
+.form-container form .box {
+  width: 100%;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  font-size: 1.8rem;
+  color: var(--black);
+  padding: 1.4rem;
+  background-color: var(--light-bg);
+}
+
+/* login page ends  */
+
+/* profile start here  */
+
+.profile .details {
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+
+.profile .details .user {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile .details .user img {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.profile .details .user h3 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+  color: var(--black);
+}
+
+.profile .details .user p {
+  font-size: 1.5rem;
+  color: var(--light-color);
+}
+
+.profile .details .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.profile .details .box-container .box {
+  background-color: var(--light-bg);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  flex: 1 1 30rem;
+}
+
+.profile .details .box-container .box .flex {
+  display: flex;
+  align-items: center;
+  gap: 1.7rem;
+  margin-bottom: 1rem;
+}
+
+.profile .details .box-container .box .flex i {
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--black);
+  line-height: 4.4rem;
+  font-size: 2rem;
+  color: var(--white);
+  text-align: center;
+}
+
+.profile .details .box-container .box .flex h3 {
+  font-size: 2rem;
+  color: var(--main-color);
+  margin-bottom: 0.2rem;
+}
+
+.profile .details .box-container .box .flex span {
+  font-size: 1.5rem;
+  color: var(--light-color);
+}
+
+/* profile end here  */
+
+/* job creation section starts here */
+.tableData {
+  margin-top: 1rem;
+  overflow-x: auto; /* Allow horizontal scrolling on small screens */
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.8rem;
+  border: var(--border);
+  color: var(--black);
+}
+
+.table th {
+  background-color: var(--main-color);
+}
+
+.table tbody tr {
+  background-color: var(--white);
+}
+
+.table tbody tr:hover {
+  background-color: var(--light-bg);
+}
+
+@media screen and (max-width: 600px) {
+  /* Make the table responsive on small screens */
+  .tableData {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  #search-btn {
+    display: inline-block;
+  }
+
+  .header .flex .search-form {
+    position: absolute;
+    top: 99%;
+    left: 0;
+    right: 0;
+    width: auto;
+    border-top: var(--border);
+    border-bottom: var(--border);
+    background-color: var(--white);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: 0.2s linear;
+  }
+
+  .header .flex .search-form.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+/* job creation section ends here  */
+
+/* resume form styling  */
+
+.resume .box-container .box {
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+
+.container form .user__details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+/* inside the form user details */
+form .user__details .input__box {
+  width: calc(100% / 2 - 20px);
+  margin-bottom: 15px;
+}
+
+.user__details .input__box .details {
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+}
+.user__details .input__box input,
+textarea {
+  height: 45px;
+  font-size: 16px;
+  color: var(--black);
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  background-color: var(--light-bg);
+}
+
+.user__details .input__box span {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+  color: var(--black);
+}
+
+.user__details .input__box input:focus,
+.user__details .input__box input:valid {
+  border-color: var(--main-purple);
+}
+
+/* submit button */
+form .button {
+  height: 45px;
+  margin: 45px 0;
+}
+
+form .button input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+  transition: all 0.3s ease;
+}
+
+form .button input:hover {
+  background: linear-gradient(-135deg, var(--main-blue), var(--main-purple));
+}
+
+@media only screen and (max-width: 584px) {
+  .resume-container {
+    max-width: 100%;
+  }
+
+  form .user__details .input__box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  form .gender__details .category {
+    width: 100%;
+  }
+
+  .user__details::-webkit-scrollbar {
+    width: 0;
+  }
+}
+/* resume styling end here */
